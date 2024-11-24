@@ -79,7 +79,7 @@
                 <!-- displays the subject cart with its details and the checkout button -->
                     <div style="display: flex; flex-wrap: wrap; padding-left: 10%;">
                         <div v-for="subject in sortedCourses" class="card" style="width: 250px; margin: 10px;">
-                            <img :src="subject.Image" :alt="subject.Subject" style="width: 100%; height: 150px; object-fit: cover;" />
+                            <img :src="function(subject.Subject)" :alt="subject.Subject" style="width: 100%; height: 150px; object-fit: cover;" />
                             <p class="card-text" style="padding: 0; margin: 0; margin-left: 10px; margin-top: 10px;;">Subject: {{subject.Subject}}</p>
                             <p class="card-text" style="padding: 0; margin: 0; margin-left: 10px;">Location: {{subject.Location}}</p>
                             <p class="card-text" style="padding: 0; margin: 0; margin-left: 10px;">Price: {{subject.Price}}</p>
@@ -159,6 +159,24 @@
                 loading: false
             },
             methods: {
+
+                function(subject){
+                    switch(subject){
+                        case "Maths":
+                            return "https://backend-dggm.onrender.com/images/maths.jpeg";
+                        case "English":
+                            return "https://backend-dggm.onrender.com/english.jpg";
+                        case "French":
+                            return "https://backend-dggm.onrender.com/french.jpg"
+                        case "Science":
+                            return "https://backend-dggm.onrender.com/science.avif";
+                        case "Music":
+                            return "https://backend-dggm.onrender.com/music.jpeg";
+                        default:
+                            return "";
+                    }
+                },
+
                 // fetch courses from backend and displays it in the frontend
                 fetchCourses() {
                     fetch('https://backend-dggm.onrender.com/courses')  
