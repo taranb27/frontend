@@ -161,7 +161,7 @@
             methods: {
                 // fetch courses from backend and displays it in the frontend
                 fetchCourses() {
-                    fetch('https://backend-afw2.onrender.com/courses')  
+                    fetch('https://backend-dggm.onrender.com/courses')  
                         .then(response => response.json())
                         .then(data => {
                             this.courses = data;
@@ -271,7 +271,7 @@
                                 }))
                             }
 
-                            fetch('https://backend-afw2.onrender.com/orders', {
+                            fetch('https://backend-dggm.onrender.com/orders', {
                                 method: 'POST',
                                 headers: {
                                     'Content-Type': 'application/json'
@@ -288,7 +288,7 @@
 
                                     if(courseInDb && bookedSpaces > 0) {
                                         console.log(`Sending request to update course: ${courseId}, bookedSpaces: ${bookedSpaces}`);
-                                        fetch(`https://backend-afw2.onrender.com/courses/${courseId}/spaces`, {
+                                        fetch(`https://backend-dggm.onrender.com/courses/${courseId}/spaces`, {
                                             method: 'PUT',
                                             headers: {
                                                 'Content-Type': 'application/json'
@@ -333,7 +333,7 @@
                     const searchQuery = document.getElementById('searchInput').value;
                     this.loading = true;
 
-                    fetch(`https://backend-afw2.onrender.com/search?query=${encodeURIComponent(searchQuery)}`)
+                    fetch(`https://backend-dggm.onrender.com/search?query=${encodeURIComponent(searchQuery)}`)
                         .then((response) => {
                             if(!response.ok) {
                                 throw new Error("failed to fetch search results")
