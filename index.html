@@ -159,7 +159,7 @@
                 loading: false
             },
             methods: {
-
+                // images for respective courses
                 images(subject){
                     switch(subject){
                         case "Maths":
@@ -288,7 +288,7 @@
                                     id: course.id, bookedSpaces: course.bookedSpaces
                                 }))
                             }
-
+                            
                             fetch('https://backend-dggm.onrender.com/orders', {
                                 method: 'POST',
                                 headers: {
